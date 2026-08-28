@@ -50,7 +50,7 @@ const genericEvenings = [
   "a slow riverside dinner",
 ];
 
-const pick = (arr: string[], i: number) => arr[i % arr.length];
+const pick = (arr: string[], i: number) => arr[i % arr.length] ?? arr[0] ?? "a local favourite";
 
 function matchDestination(name: string): Destination | undefined {
   const q = name.trim().toLowerCase();
