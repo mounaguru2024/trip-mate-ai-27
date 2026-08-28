@@ -75,7 +75,7 @@ export function generateTrip(input: TripInput): Trip {
   const place = dest?.name ?? input.to;
 
   const days: DayPlan[] = Array.from({ length: input.days }, (_, i) => {
-    const flavour = input.interests.length ? interestFlavour[input.interests[i % input.interests.length]] : "";
+    const flavour = input.interests.length ? (interestFlavour[input.interests[i % input.interests.length] ?? ""] ?? "") : "";
     const isFirst = i === 0;
     const isLast = i === input.days - 1 && input.days > 1;
     return {
