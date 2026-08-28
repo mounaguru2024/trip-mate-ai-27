@@ -32,13 +32,13 @@ export function PlannerForm({
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const next: Record<string, string> = {};
-    if (!from.trim()) next.from = "Where are you starting from?";
-    if (!to.trim()) next.to = "Pick a destination";
-    if (!date) next.date = "Choose a travel date";
-    if (!days || Number(days) < 1) next.days = "At least 1 day";
-    if (!travelers || Number(travelers) < 1) next.travelers = "At least 1 traveler";
-    if (!budget || Number(budget) < 1000) next.budget = "Enter a budget of ₹1,000 or more";
-    if (picked.length === 0) next.interests = "Select at least one interest";
+    if (!from.trim()) next['from'] = "Where are you starting from?";
+    if (!to.trim()) next['to'] = "Pick a destination";
+    if (!date) next['date'] = "Choose a travel date";
+    if (!days || Number(days) < 1) next['days'] = "At least 1 day";
+    if (!travelers || Number(travelers) < 1) next['travelers'] = "At least 1 traveler";
+    if (!budget || Number(budget) < 1000) next['budget'] = "Enter a budget of ₹1,000 or more";
+    if (picked.length === 0) next['interests'] = "Select at least one interest";
     setErrors(next);
     if (Object.keys(next).length > 0) return;
 
